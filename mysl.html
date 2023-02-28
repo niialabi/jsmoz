@@ -25,21 +25,20 @@
       <input type="text" name="item" id="item">
       <button>Add item</button>
     </div>
-
-    
-
+  
     <ul>
 
     </ul>
-
+    
     <script>
         const unlist = document.querySelector("ul");
         const input = document.querySelector("#item");
         const addButton = document.querySelector("button");
         //const listItem = document.createElement('li');
         
-
-        addButton.addEventListener('click', () => {
+        //using function declarations instead of arrow functions
+        addButton.addEventListener('click', runShoppingList ) 
+        function runShoppingList() {
             const inputValue = input.value;
             input.value = " ";
 
@@ -52,15 +51,16 @@
             listText.textContent = inputValue;
             listBtn.textContent = 'Delete';
             unlist.appendChild(listItem);
-            listBtn.addEventListener('click', () => {
+            listBtn.addEventListener('click', delDel )
+            function delDel() {
             unlist.removeChild(listItem);
-            });
+            }
             //unlist.appendChild(listItem ); 
             //unlist.appendChild(input.textContent);
             input.focus();
         }
-        );
         input.focus();
+      
         
     </script>
   </body>
